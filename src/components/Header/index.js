@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {aboutInfo, navigate} from '../../datapull'
+import Nav from './Nav'
 
 class Header extends Component {
     render () {
@@ -10,28 +12,20 @@ class Header extends Component {
                             Logo
                         </div>
                         <div className="col-md-7">
-                            <div className="row">
-                                <div className="col">phones</div>
-                                <div className="col">worktime</div>
-                                <div className="col">basket</div>
+                            <div className="row justify-content-between">
+                                <div className="col">
+                                    <p>{aboutInfo.phones[0]}</p>
+                                    <p>{aboutInfo.phones[1]}</p>
+                                </div>
+                                <div className="col">
+                                    <p>Работаем с {aboutInfo.worktime.from} до {aboutInfo.worktime.to}</p>
+                                    <p>{aboutInfo.worktime.weekend}</p>
+                                </div>
+                                <div className="col">
+                                    <button>Корзина</button>
+                                </div>
                             </div>
-                            <ul className="nav d-flex justify-content-around">
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">link</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">link</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">link</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">link</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="#" className="nav-link">link</a>
-                                </li>
-                            </ul>
+                            <Nav navigate={navigate}/>
                         </div>
                     </div>
                     <div className="row">
